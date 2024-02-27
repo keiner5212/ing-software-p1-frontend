@@ -3,8 +3,6 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	width: 100vw;
-	height: 100vh;
 	padding: 2.5rem;
 }
 
@@ -22,6 +20,7 @@
 }
 
 .error-button {
+	width: 200px;
 	color: #007bff;
 	border: 1px solid #ced4da;
 	background-color: transparent;
@@ -30,12 +29,22 @@
 	font-size: 0.875rem;
 	text-align: center;
 	cursor: pointer;
-	transition: background-color 0.3s ease;
+	transition: all 0.3s ease;
 	padding: 0.625rem 1.25rem;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
 }
 
 .error-button:hover {
-	background-color: #f8f9fa;
+	background-color: #000000;
+	color: white;
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
 }
 
 .error-link {

@@ -394,4 +394,9 @@ html, body, .app{
     font-family: "Cascadia Code";
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
+}
+
+main{
+    height: 93%;
 }
