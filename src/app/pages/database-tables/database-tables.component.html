@@ -180,7 +180,7 @@
 					*ngIf="fotosSalas && fotosSalas.length > 0; else noFotosSalas"
 				>
 					<tr *ngFor="let fotosala of fotosSalas">
-						<th scope="row">{{ fotosala.id_foto }}</th>
+						<th scope="row">{{ fotosala.id_foto_sala }}</th>
 						<td>{{ fotosala.id_sala }}</td>
 						<td>{{ fotosala.imagen }}</td>
 					</tr>

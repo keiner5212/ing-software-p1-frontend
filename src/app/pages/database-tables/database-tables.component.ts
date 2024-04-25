@@ -34,6 +34,7 @@ export class DatabaseTablesComponent implements AfterViewInit {
 	roles: Rol[] = [];
 	salas: Sala[] = [];
 	usuarios: Usuario[] = [];
+	private LoadingTimeOut: number = 5000;
 
 	loaded: {
 		estadosReservacion: boolean;
@@ -91,6 +92,7 @@ export class DatabaseTablesComponent implements AfterViewInit {
 								"Finished",
 								"Estados de Reservacion loaded"
 							);
+
 						} else if (
 							response[0].hasOwnProperty("id_reservacion")
 						) {
@@ -100,7 +102,7 @@ export class DatabaseTablesComponent implements AfterViewInit {
 								"Finished",
 								"Reservaciones loaded"
 							);
-						} else if (response[0].hasOwnProperty("id_foto")) {
+						} else if (response[0].hasOwnProperty("id_foto_sala")) {
 							this.loaded.fotosSalas = true;
 							this.fotosSalas = response;
 							this.succesMessage(
@@ -138,7 +140,7 @@ export class DatabaseTablesComponent implements AfterViewInit {
 				salas: true,
 				usuarios: true,
 			};
-		}, 5000);
+		}, this.LoadingTimeOut);
 	}
 
 	getReadableDate = getReadableDate;

@@ -25,6 +25,7 @@ h2{
     display: block;
     text-align: center;
     & span{
+        font-size: 1em !important;
         color: #00bbf0;
     }
 }

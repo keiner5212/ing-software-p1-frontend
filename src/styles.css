@@ -20,6 +20,11 @@
      font-family: 'Cascadia Code', sans-serif;
  }
 
+ li,p,span, a, input, textarea, button, label {
+     font-size: 14px !important;
+     text-decoration: none !important;
+ }
+
 .container.custom-container {
     min-height: calc(100vh - 402px);
     display: flex;
@@ -487,6 +492,7 @@ body,
 }
 
 .heading_container h2 span {
+    font-size: 1em !important;
     color: #00bbf0;
 }
 
@@ -500,8 +506,4 @@ body,
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
-}
-
-a {
-    text-decoration: none !important;
 }

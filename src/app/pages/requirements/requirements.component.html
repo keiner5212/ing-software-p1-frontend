@@ -24,6 +24,72 @@
 			<h2>Requisitos del Proyecto:</h2>
 			<ol>
 				<li>
+					<h3>Requisitos del sistema</h3>
+					<ul>
+						<li>
+							Todas las acciones de los usuarios sobre las
+							reservas requieren que el usuario haya iniciado
+							sesion, para iniciar sesion el usuario debe estar
+							registrado.
+						</li>
+						<li>
+							Un usuario con rol administrador puede realizar
+							reservas de salas para cualquier docente, un usuario
+							con rol docente puede realizar reservas unicamente
+							para si mismo.
+						</li>
+						<li>
+							Todos los usuarios podran ver las salas y el detalle
+							de cada una (que incluira las reservas de dicha
+							sala).
+						</li>
+						<li>
+							Todos los usuarios pueden ver un historial con las
+							salas que han reservado.
+						</li>
+						<li>
+							Los usuarios con rol de administrador podran
+							gestionar las salas (CRUD), en caso de alguna
+							modificacion/eliminacion, se debera informar por
+							correo a los usuarios con reservas pendientes a esa
+							sala.
+						</li>
+						<li>
+							Un usuario con rol administrador puede gestionar las
+							fotos de cualquier sala.
+						</li>
+						<li>
+							Un usuario con rol administrador puede gestionar los
+							usuarios registrados.
+						</li>
+						<li>
+							Un usuario con rol administrador puede gestionar las
+							reservas.
+						</li>
+						<li>
+							Los usuarios podran reservar una sala por un tiempo
+							determinado.
+						</li>
+						<li>
+							Los usuarios podran cancelar sus reservas.
+						</li>
+						<li>
+							Los usuarios podran revisar cuantas advertencias
+							llevan.
+						</li>
+						<li>
+							Si un usuario se ausenta a una sala que ha
+							reservado, obtiene una advertencia, si se llega a 3
+							advertencias para un usuario se le bloquea el acceso
+							a reservas por si mismo.
+						</li>
+						<li>
+							Permitir a los usuarios buscar salas según criterios
+							como capacidad, piso y disponibilidad.
+						</li>
+					</ul>
+				</li>
+				<li>
 					<h3>Desarrollo del backend</h3>
 					<ul>
 						<li>Usar como gestor de bases de datos PostgreSQL.</li>
@@ -68,22 +134,11 @@
 							puede ser posterior a la fecha de fin.
 						</li>
 						<li>
-							La información de los usuarios debe guardarse
-							encriptada.
-						</li>
-						<li>
 							Todo debe estar pensado para ser manejado con
 							permisos mediante la tabla de roles.
 						</li>
 						<li>
-							Si una sala se encuentra en estado de reserva, no
-							debe ser posible hacer una reserva a la misma en el periodo de tiempo establecido en la reservación.
-						</li>
-						<li>
-							Si un usuario se ausenta a una sala que ha
-							reservado, obtiene una advertencia, si se llega a 3
-							advertencias para un usuario se le bloquea el acceso
-							a reservas por si mismo.
+							La autenticación debe ser gestionada usando JWT.
 						</li>
 					</ul>
 				</li>
@@ -91,37 +146,31 @@
 					<h3>Desarrollo de la Página Web</h3>
 					<ul>
 						<li>
-							La página debe ser accesible desde cualquier
-							navegador web.
-						</li>
-						<li>
 							Utilizar Node.js como entorno de trabajo y Angular
 							como framework.
 						</li>
 						<li>
-							Emplear TypeScript en el desarrollo de la página
+							Emplear TypeScript en el desarrollo.
 						</li>
 						<li>
-							Utilizar Bootstrap para la creación de la página.
+							Utilizar Bootstrap para la creación y estilización.
 						</li>
 						<li>
-							Incluir un menú de registro para nuevos usuarios,
-							capturando información básica que se almacenará en
-							la base de datos.
+							La página debe ser accesible desde cualquier
+							navegador web.
+						</li>
+						<li>
+							Ofrecer la posibilidad de cambiar el idioma de la
+							interfaz de usuario para atender a usuarios que
+							prefieren otros idiomas además del predeterminado.
+						</li>
+						<li>
+							Incluir un sistema de autenticación que invluya el
+							registro de usuarios y el inicio de sesión.
 						</li>
 						<li>
 							Incorporar un menú desplegable con secciones para
 							Requerimientos, Equipo SCRUM y SWEBOK.
-						</li>
-						<li>
-							Implementar un apartado de inicio de sesión para que
-							los usuarios puedan acceder con sus credenciales,
-							verificándolas con la base de datos.
-						</li>
-						<li>
-							Permitir a los usuarios reservar salas, ya sea para
-							sí mismos o para otros usuarios por parte de
-							administradores.
 						</li>
 						<li>
 							Diseñar una interfaz web intuitiva para docentes de
@@ -143,55 +192,8 @@
 							del proyecto.
 						</li>
 						<li>
-							Desarrollar un menú de registro para usuarios
-							nuevos, donde se registre con información basica la
-							cual se almacenara en la base de datos.
-						</li>
-						<li>
-							Desarrollar un apartado de inicio de seción para
-							verificar las credenciales de cada usuario.
-						</li>
-						<li>
-							Mostrar la estructura del equipo SCRUM desde la
-							página.
-						</li>
-						<li>
-							Desarrollar una sección para mostrar las salas
-							disponibles.
-						</li>
-						<li>
 							Garantizar una interacción fluida entre el usuario y
 							el sistema de reservas.
-						</li>
-						<li>
-							Los usuarios con rol de administrador podran ver
-							toda la informacion.
-						</li>
-						<li>
-							El inicio de sesion para administradores estara
-							separado de los usuarios.
-						</li>
-						<li>
-							Los usuarios con rol de administrador podran
-							modificar (actualizar, borrar, etc) toda la
-							informacion.
-						</li>
-						<li>
-							Los usuarios podran reservar una sala por un tiempo
-							determinado.
-						</li>
-						<li>
-							Los usuarios podran cancelar sus reservas.
-						</li>
-						<li>
-							Los usuarios podran ver el historial de sus
-							reservas.
-						</li>
-						<li>
-							Los usuarios podran revisar cuantas advertencias llevan.
-						</li>
-						<li>
-							Un usuario tiene un limite de reservas semanales de 3.
 						</li>
 					</ul>
 				</li>
