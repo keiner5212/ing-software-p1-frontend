@@ -116,3 +116,14 @@ header {
     transform: rotate(90deg);
     top: 0;
 }
+
+.dropdown-menu{
+    background-color: #ffff;
+}
+.dropdown-item:hover{
+    background-color: #8e99a8;
+}
+
+.active-dropdown{
+    color: #00bbf0 !important;
+}

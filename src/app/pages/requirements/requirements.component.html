@@ -1,0 +1,234 @@
+<app-header></app-header>
+<div class="container papper" id="requirements-container">
+	<h1 class="mb-4">
+		Proyecto de Ingeniería de Software: Sistema de Reserva de Salas
+	</h1>
+
+	<div class="row mb-5">
+		<div class="col">
+			<h2>Backlog del Producto</h2>
+			<p>
+				<strong>Visión General del Proyecto:</strong> Actualmente, el
+				proceso de reserva de salas en el edificio de docentes es
+				manual, utilizando papel y lápiz. Para optimizar este proceso,
+				proponemos desarrollar un sistema de reservas que permita
+				reservar salas de manera más rápida y desde cualquier ubicación.
+				Es fundamental definir claramente los requisitos y
+				funcionalidades para el sistema.
+			</p>
+		</div>
+	</div>
+
+	<div class="row mb-5">
+		<div class="col">
+			<h2>Requisitos del Proyecto:</h2>
+			<ol>
+				<li>
+					<h3>Desarrollo del backend</h3>
+					<ul>
+						<li>Usar como gestor de bases de datos PostgreSQL.</li>
+						<li>
+							La aplicacion estara desarrollada con Express.js.
+						</li>
+						<li>
+							Crear una tabla para almacenar información de
+							usuarios que puedan reservar salas. Debe incluir
+							datos básicos como nombre, apellido, email,
+							contraseña y documento de identidad, que admita
+							varios formatos.
+						</li>
+						<li>
+							Crear una tabla para almacenar detalles de las
+							salas, incluyendo descripción, capacidad y piso.
+							Además, se debe indicar si la sala está ocupada con
+							un campo booleano, inicializado en falso por
+							defecto. La capacidad y el piso deben ser valores
+							mayores que cero.
+						</li>
+						<li>
+							Desarrollar una tabla para gestionar los roles de
+							los usuarios. Al registrarse, con una columna para
+							especificar el rol, estableciendo "Docente" como
+							valor por defecto.
+						</li>
+						<li>
+							Diseñar una tabla para almacenar los estados de cada
+							sala, permitiendo especificar su estado.
+						</li>
+						<li>
+							Crear una tabla para almacenar enlaces a las
+							fotografías de las salas.
+						</li>
+						<li>
+							Crear una tabla para gestionar las reservaciones
+							realizadas por usuarios registradores y registrados,
+							incluyendo la fecha de inicio y fin de cada reserva.
+							Se debe indicar un estado para conocer la
+							disponibilidad de una sala. La fecha de inicio no
+							puede ser posterior a la fecha de fin.
+						</li>
+						<li>
+							La información de los usuarios debe guardarse
+							encriptada.
+						</li>
+						<li>
+							Todo debe estar pensado para ser manejado con
+							permisos mediante la tabla de roles.
+						</li>
+						<li>
+							Si una sala se encuentra en estado de reserva, no
+							debe ser posible hacer una reserva a la misma en el periodo de tiempo establecido en la reservación.
+						</li>
+						<li>
+							Si un usuario se ausenta a una sala que ha
+							reservado, obtiene una advertencia, si se llega a 3
+							advertencias para un usuario se le bloquea el acceso
+							a reservas por si mismo.
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h3>Desarrollo de la Página Web</h3>
+					<ul>
+						<li>
+							La página debe ser accesible desde cualquier
+							navegador web.
+						</li>
+						<li>
+							Utilizar Node.js como entorno de trabajo y Angular
+							como framework.
+						</li>
+						<li>
+							Emplear TypeScript en el desarrollo de la página
+						</li>
+						<li>
+							Utilizar Bootstrap para la creación de la página.
+						</li>
+						<li>
+							Incluir un menú de registro para nuevos usuarios,
+							capturando información básica que se almacenará en
+							la base de datos.
+						</li>
+						<li>
+							Incorporar un menú desplegable con secciones para
+							Requerimientos, Equipo SCRUM y SWEBOK.
+						</li>
+						<li>
+							Implementar un apartado de inicio de sesión para que
+							los usuarios puedan acceder con sus credenciales,
+							verificándolas con la base de datos.
+						</li>
+						<li>
+							Permitir a los usuarios reservar salas, ya sea para
+							sí mismos o para otros usuarios por parte de
+							administradores.
+						</li>
+						<li>
+							Diseñar una interfaz web intuitiva para docentes de
+							diferentes edades y personal del edificio.
+						</li>
+						<li>
+							Incluir un apartado que presente información sobre
+							los desarrolladores del sitio.
+						</li>
+						<li>
+							Exhibir el ciclo de vida del software en la página.
+						</li>
+						<li>
+							Contar con una sección para visualizar cada área de
+							conocimiento en el SWEBOK.
+						</li>
+						<li>
+							Incorporar una sección para ver los requerimientos
+							del proyecto.
+						</li>
+						<li>
+							Desarrollar un menú de registro para usuarios
+							nuevos, donde se registre con información basica la
+							cual se almacenara en la base de datos.
+						</li>
+						<li>
+							Desarrollar un apartado de inicio de seción para
+							verificar las credenciales de cada usuario.
+						</li>
+						<li>
+							Mostrar la estructura del equipo SCRUM desde la
+							página.
+						</li>
+						<li>
+							Desarrollar una sección para mostrar las salas
+							disponibles.
+						</li>
+						<li>
+							Garantizar una interacción fluida entre el usuario y
+							el sistema de reservas.
+						</li>
+						<li>
+							Los usuarios con rol de administrador podran ver
+							toda la informacion.
+						</li>
+						<li>
+							El inicio de sesion para administradores estara
+							separado de los usuarios.
+						</li>
+						<li>
+							Los usuarios con rol de administrador podran
+							modificar (actualizar, borrar, etc) toda la
+							informacion.
+						</li>
+						<li>
+							Los usuarios podran reservar una sala por un tiempo
+							determinado.
+						</li>
+						<li>
+							Los usuarios podran cancelar sus reservas.
+						</li>
+						<li>
+							Los usuarios podran ver el historial de sus
+							reservas.
+						</li>
+						<li>
+							Los usuarios podran revisar cuantas advertencias llevan.
+						</li>
+						<li>
+							Un usuario tiene un limite de reservas semanales de 3.
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h3>Optimización del Proceso de Reserva</h3>
+					<ul>
+						<li>
+							Facilitar la reserva rápida desde cualquier
+							ubicación.
+						</li>
+						<li>
+							Garantizar eficiencia en el proceso de reserva de
+							salas.
+						</li>
+						<li>
+							Implementar notificaciones para confirmación de
+							reservas.
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h3>Seguridad y Privacidad</h3>
+					<ul>
+						<li>
+							Integrar medidas de seguridad para proteger la
+							información de los usuarios (encriptación,
+							autenticación, etc).
+						</li>
+						<li>
+							Implementar autenticación segura para acceder al
+							sistema.
+						</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+	</div>
+</div>
+
+<app-footer></app-footer>

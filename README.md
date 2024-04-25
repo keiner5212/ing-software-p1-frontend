@@ -2,26 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Introduction
+Bienvenido al proyecto de desarrollo de esta plataforma web para la gestión de reservas de salas de asesorías en nuestra universidad. Esta iniciativa surge con el objetivo de optimizar y simplificar el proceso de reserva de espacios destinados a sesiones de asesoramiento académico y tutorías entre estudiantes y profesores.
+ 
+La necesidad de contar con un sistema eficiente de reserva de salas de asesorías se fundamenta en la creciente demanda de este tipo de servicios, así como en la importancia de brindar un entorno propicio para el aprendizaje colaborativo y el apoyo individualizado.
+ 
+Nuestra plataforma web ofrecerá una interfaz intuitiva y fácil de usar, permitiendo a estudiantes y profesores realizar reservas de salas de manera ágil y eficiente. Además, se incluirán funcionalidades adicionales para la gestión de horarios, notificaciones y seguimiento de reservas, garantizando así una experiencia completa y satisfactoria para todos los usuarios.
+ 
+A lo largo de este proyecto, nos enfocaremos en diseñar y desarrollar una solución tecnológica que se adapte a las necesidades específicas de nuestra comunidad universitaria, promoviendo la excelencia académica y facilitando el acceso a recursos clave para el éxito estudiantil.

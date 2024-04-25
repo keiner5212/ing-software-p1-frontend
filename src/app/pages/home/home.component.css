@@ -460,4 +460,10 @@ a:focus {
     color: inherit;
 }
 
-/*# sourceMappingURL=style.css.map */
+.dropdown-menu{
+    background-color: #0d6efd;
+}
+
+.dropdown-item:hover{
+    background-color: #0b4fb4;
+}

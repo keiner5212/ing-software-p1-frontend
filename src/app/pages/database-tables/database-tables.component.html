@@ -1,0 +1,252 @@
+<app-header></app-header>
+<div class="container mt-4">
+	<h1>Estados de Reservaciones</h1>
+	<table class="table table-striped table-bordered table-sm text-center">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Estado</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-container
+				*ngIf="loaded.estadosReservacion; else loadingEstadosReservations"
+			>
+				<ng-container
+					*ngIf="estadosReservacion && estadosReservacion.length > 0; else noEstadosReservations"
+				>
+					<tr *ngFor="let estado_reservation of estadosReservacion">
+						<th scope="row">{{ estado_reservation.id_er }}</th>
+						<td>{{ estado_reservation.estado }}</td>
+					</tr>
+				</ng-container>
+				<ng-template #noEstadosReservations>
+					<tr>
+						<td colspan="7" class="text-center">
+							No hay datos disponibles.
+						</td>
+					</tr>
+				</ng-template>
+			</ng-container>
+			<ng-template #loadingEstadosReservations>
+				<tr>
+					<td colspan="7" class="text-center">
+						<app-loader></app-loader>
+					</td>
+				</tr>
+			</ng-template>
+		</tbody>
+	</table>
+
+	<h1>Reservaciones</h1>
+	<table class="table table-striped table-bordered table-sm text-center">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">U. Registrador</th>
+				<th scope="col">U. Registrado</th>
+				<th scope="col">Sala</th>
+				<th scope="col">Estado</th>
+				<th scope="col">Fecha Inicio</th>
+				<th scope="col">Fecha Fin</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-container *ngIf="loaded.reservations; else loadingReservations">
+				<ng-container
+					*ngIf="reservations && reservations.length > 0; else noReservations"
+				>
+					<tr *ngFor="let reservation of reservations">
+						<th scope="row">{{ reservation.id_reservacion }}</th>
+						<td>{{ reservation.usuario_registrador }}</td>
+						<td>{{ reservation.usuario_registrado }}</td>
+						<td>{{ reservation.id_sala }}</td>
+						<td>{{ reservation.estado }}</td>
+						<td>
+							{{
+							getReadableDate(reservation.fecha_inicio.toString())
+							}}
+						</td>
+						<td>
+							{{ getReadableDate(reservation.fecha_fin.toString())
+							}}
+						</td>
+					</tr>
+				</ng-container>
+				<ng-template #noReservations>
+					<tr>
+						<td colspan="7" class="text-center">
+							No hay datos disponibles.
+						</td>
+					</tr>
+				</ng-template>
+			</ng-container>
+			<ng-template #loadingReservations>
+				<tr>
+					<td colspan="7" class="text-center">
+						<app-loader></app-loader>
+					</td>
+				</tr>
+			</ng-template>
+		</tbody>
+	</table>
+
+	<h1>Salas</h1>
+	<table class="table table-striped table-bordered table-sm text-center">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Descripción</th>
+				<th scope="col">Capacidad</th>
+				<th scope="col">Piso</th>
+				<th scope="col">Ocupado</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-container *ngIf="loaded.salas; else loadingSalas">
+				<ng-container *ngIf="salas && salas.length > 0; else noSalas">
+					<tr *ngFor="let sala of salas">
+						<th scope="row">{{ sala.id_sala }}</th>
+						<td>{{ sala.descripcion }}</td>
+						<td>{{ sala.capacidad }}</td>
+						<td>{{ sala.piso }}</td>
+						<td>{{ sala.ocupado }}</td>
+					</tr>
+				</ng-container>
+				<ng-template #noSalas>
+					<tr>
+						<td colspan="7" class="text-center">
+							No hay datos disponibles.
+						</td>
+					</tr>
+				</ng-template>
+			</ng-container>
+			<ng-template #loadingSalas>
+				<tr>
+					<td colspan="7" class="text-center">
+						<app-loader></app-loader>
+					</td>
+				</tr>
+			</ng-template>
+		</tbody>
+	</table>
+
+	<h1>Roles</h1>
+	<table class="table table-striped table-bordered table-sm text-center">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Rol</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-container *ngIf="loaded.roles; else loadingRoles">
+				<ng-container *ngIf="roles && roles.length > 0; else noRoles">
+					<tr *ngFor="let r of roles">
+						<th scope="row">{{ r.id_rol }}</th>
+						<td>{{ r.rol }}</td>
+					</tr>
+				</ng-container>
+				<ng-template #noRoles>
+					<tr>
+						<td colspan="7" class="text-center">
+							No hay datos disponibles.
+						</td>
+					</tr>
+				</ng-template>
+			</ng-container>
+			<ng-template #loadingRoles>
+				<tr>
+					<td colspan="7" class="text-center">
+						<app-loader></app-loader>
+					</td>
+				</tr>
+			</ng-template>
+		</tbody>
+	</table>
+
+	<h1>Fotos Salas</h1>
+	<table class="table table-striped table-bordered table-sm text-center">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Sala</th>
+				<th scope="col">URL</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-container *ngIf="loaded.fotosSalas; else loadingFotosSalas">
+				<ng-container
+					*ngIf="fotosSalas && fotosSalas.length > 0; else noFotosSalas"
+				>
+					<tr *ngFor="let fotosala of fotosSalas">
+						<th scope="row">{{ fotosala.id_foto }}</th>
+						<td>{{ fotosala.id_sala }}</td>
+						<td>{{ fotosala.imagen }}</td>
+					</tr>
+				</ng-container>
+				<ng-template #noFotosSalas>
+					<tr>
+						<td colspan="7" class="text-center">
+							No hay datos disponibles.
+						</td>
+					</tr>
+				</ng-template>
+			</ng-container>
+			<ng-template #loadingFotosSalas>
+				<tr>
+					<td colspan="7" class="text-center">
+						<app-loader></app-loader>
+					</td>
+				</tr>
+			</ng-template>
+		</tbody>
+	</table>
+
+	<h1>Usuarios</h1>
+	<table class="table table-striped table-bordered table-sm text-center">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Documento</th>
+				<th scope="col">NNombre</th>
+				<th scope="col">Apellido</th>
+				<th scope="col">Email</th>
+				<th scope="col">Clave</th>
+				<th scope="col">Rol</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-container *ngIf="loaded.usuarios; else loadingUsuarios">
+				<ng-container
+					*ngIf="usuarios && usuarios.length > 0; else noUsuarios"
+				>
+					<tr *ngFor="let usuario of usuarios">
+						<th scope="row">{{ usuario.id_usuario }}</th>
+						<td>{{ usuario.doc_identidad }}</td>
+						<td>{{ usuario.nombre }}</td>
+						<td>{{ usuario.apellido }}</td>
+						<td>{{ usuario.email }}</td>
+						<td>{{ usuario.clave }}</td>
+						<td>{{ usuario.id_rol }}</td>
+					</tr>
+				</ng-container>
+				<ng-template #noUsuarios>
+					<tr>
+						<td colspan="7" class="text-center">
+							No hay datos disponibles.
+						</td>
+					</tr>
+				</ng-template>
+			</ng-container>
+			<ng-template #loadingUsuarios>
+				<tr>
+					<td colspan="7" class="text-center">
+						<app-loader></app-loader>
+					</td>
+				</tr>
+			</ng-template>
+		</tbody>
+	</table>
+</div>
+<app-footer></app-footer>

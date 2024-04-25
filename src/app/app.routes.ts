@@ -2,27 +2,44 @@ import { Routes } from '@angular/router';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
-import { ServicesPageComponent } from './pages/services-page/services-page.component';
-import { WhyUsPageComponent } from './pages/why-us-page/why-us-page.component';
 import { TeamPageComponent } from './pages/team-page/team-page.component';
+import { LoginComponent } from './pages/Auth/login/login.component';
+import { RegisterComponent } from './pages/Auth/register/register.component';
+import { CiclosDeVidaComponent } from './pages/ciclos-de-vida/ciclos-de-vida.component';
+import { RequirementsComponent } from './pages/requirements/requirements.component';
+import { SwebokComponent } from './pages/swebok/swebok.component';
+import { DatabaseTablesComponent } from './pages/database-tables/database-tables.component';
 
 export const routes: Routes = [
+    //general routes
     {
-        path: '', component: HomeComponent
+        path: 'home', component: HomeComponent
     },
     {
         path: 'about', component: AboutPageComponent
     },
+    { path: "login", component: LoginComponent },
+    { path: "register", component: RegisterComponent },
+    { path: "lifecycle", component: CiclosDeVidaComponent },
+
+    // dropdown menu routes
+    { path: "requeriments", component: RequirementsComponent },
     {
-        path: 'why-us', component: WhyUsPageComponent
+        path: 'scrum-team', component: TeamPageComponent
     },
     {
-        path: 'services', component: ServicesPageComponent
+        path: 'swebok', component: SwebokComponent
     },
     {
-        path: 'team', component: TeamPageComponent
+        path: 'database-tables', component: DatabaseTablesComponent
     },
+
+    // default redirect
+    { path: "", redirectTo: "home", pathMatch: "full" },
+    
+    // 404 page
     {
         path: '**', component: NotFoundComponent
-    }
+    },
+
 ];

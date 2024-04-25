@@ -3,45 +3,79 @@
 		<nav class="navbar navbar-expand-lg custom_nav-container">
 			<a class="navbar-brand" href="/">
 				<span>
-					Finexo
+					VIR
 				</span>
 			</a>
 
-			<button
-				class="navbar-toggler primary_btn"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span class=""> </span>
-			</button>
-
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="/"
-							>Home <span class="sr-only">(current)</span></a
-						>
-					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="/home">Home</a>
+					</li>
+					<li class="dropdown nav-item">
+						<button
+							class="btn dropdown-toggle nav-link {{['/requeriments','/scrum-team','/swebok', '/database-tables'].includes(location)?'active-dropdown':''}}"
+							type="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+						>
+							Reservation Project
+						</button>
+						<ul class="dropdown-menu">
+							<li>
+								<a
+									class="dropdown-item {{location=='/requeriments'?'active':''}}"
+									type="button"
+									href="/requeriments"
+									>Requeriments</a
+								>
+							</li>
+							<li>
+								<a
+									class="dropdown-item {{location=='/scrum-team'?'active':''}}"
+									type="button"
+									href="/scrum-team"
+								>
+									SCRUM team</a
+								>
+							</li>
+							<li>
+								<a
+									class="dropdown-item {{location=='/swebok'?'active':''}}"
+									type="button"
+									href="/swebok"
+									>SWEBOK</a
+								>
+							</li>
+							<li>
+								<a
+									class="dropdown-item {{location=='/database-tables'?'active':''}}"
+									type="button"
+									href="/database-tables"
+									>Database Tables</a
+								>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item {{location=='/about'?'active':''}}">
 						<a class="nav-link" href="/about"> About</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/services">Services</a>
+					<li class="nav-item {{location=='/lifecycle'?'active':''}}">
+						<a class="nav-link" href="/lifecycle">lifecycle</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/why-us">Why Us</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/team">Team</a>
-					</li>
-					<li class="nav-item">
+					<li class="nav-item {{location=='/login'?'active':''}}">
 						<a class="nav-link" href="/login">
 							<i class="fa fa-user" aria-hidden="true"></i>
 							Login</a
+						>
+					</li>
+					<li class="nav-item {{location=='/register'?'active':''}}">
+						<a class="nav-link" href="/register">
+							<i
+								class="fa fas fa-user-plus"
+								aria-hidden="true"
+							></i>
+							Sign Up</a
 						>
 					</li>
 				</ul>

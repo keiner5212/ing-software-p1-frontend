@@ -1,0 +1,30 @@
+img {
+    height: 250px;
+}
+
+.card-body {
+    font-size: 16px;
+    line-height: 1.5;
+    height: 72px;
+    height: 264px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+}
+
+.lifecycle-section {
+    background: rgb(0, 32, 74);
+    background: linear-gradient(0deg, rgba(0, 32, 74, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+h2{
+    margin-top: 90px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    & span{
+        color: #00bbf0;
+    }
+}
