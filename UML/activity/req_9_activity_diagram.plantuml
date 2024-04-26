@@ -1,0 +1,41 @@
+' Los usuarios podran reservar una sala por un tiempo determinado.
+
+@startuml req9
+
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+start
+repeat
+    repeat :Ver listado de salas;
+        if(Selecciona una sala?) then (no)
+            stop
+        else (si)
+            :Mostrar detalles de la sala;
+        endif
+    backward :Volver al listado de salas;
+    repeat while (Desea reservar sala?) is (no) not (si)
+    :Selecciona una fecha;
+backward :Volver al listado de salas;
+repeat while (Hay disponibilidad para la fecha?) is (no) not (si)
+:Selecciona hora inicio disponible;
+:Selecciona hora fin disponible;
+if(Confirma la reserva?) then (si)
+    :Reserva la sala;
+    #palegreen :Alert "Sala reservada";
+else (no)
+    :Cancela fomulario;
+    #red :Alert "Cancelado";
+endif
+
+stop
+
+@enduml

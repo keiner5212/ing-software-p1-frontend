@@ -1,0 +1,40 @@
+' Los usuarios con rol de administrador podran gestionar las salas (CRUD), 
+' en caso de alguna modificacion/eliminacion, se debera 
+' informar por correo a los usuarios con reservas pendientes a esa sala.
+
+@startuml req5
+
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+Start
+
+if (Administrador) then (Si)
+    :Ver Disponibilidad;
+    if (¿se desea crear una sala?) then (si)
+        :Crear sala;
+    else (No)
+      if (¿se desea modificar una sala?) then (Si)
+          :Modificar sala;
+          :Notificar a usuarios con reservas pendientes;
+      else if (se desea eliminar una sala?) then (Si)
+          :Eliminar sala;
+          :Notificar a usuarios con reservas pendientes;
+      else (No)
+      endif
+    endif
+else (No)
+    :Ver disponibilidad;
+endif
+
+End
+
+@enduml

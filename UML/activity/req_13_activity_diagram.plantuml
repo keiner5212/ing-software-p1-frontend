@@ -1,0 +1,28 @@
+' Permitir a los usuarios buscar salas según
+' criterios como capacidad, piso y disponibilidad.
+
+@startuml req13
+
+
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+
+Start
+
+if (Usuario) then (Si)
+    :Buscar salas según criterios;
+else (No)
+    :No aplica para este usuario;
+endif
+
+End
+@enduml

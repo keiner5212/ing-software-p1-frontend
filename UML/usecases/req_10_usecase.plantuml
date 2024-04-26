@@ -1,0 +1,26 @@
+' Los usuarios podran cancelar sus reservas.
+
+@startuml req10
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+actor usuario <<Usuario>>
+
+rectangle "Cancelación de Reserva" {
+    (Cancelar reserva) as cancelarReserva
+}
+
+usuario -- cancelarReserva
+
+
+@enduml

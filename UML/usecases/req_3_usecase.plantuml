@@ -1,0 +1,29 @@
+' Todos los usuarios podran ver las salas y el detalle de 
+' cada una (que incluira las reservas de dicha sala).
+
+@startuml req3
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+actor profesor <<example>>
+
+rectangle "Ver Salas y Detalle" {
+    (Ver salas) as verSalas
+    (Ver detalle de sala) as verDetalle
+}
+
+profesor -- verSalas
+profesor -- verDetalle
+
+verDetalle ..> verSalas: include
+
+@enduml

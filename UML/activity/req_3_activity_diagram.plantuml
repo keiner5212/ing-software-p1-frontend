@@ -1,0 +1,35 @@
+' Todos los usuarios podran ver las salas y el detalle de 
+' cada una (que incluira las reservas de dicha sala).
+
+@startuml req3
+
+
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+skinparam shadowing false
+
+start
+:Mostrar lista de salas;
+if (Usuario selecciona una sala) then (sala seleccionada)
+    - Mostrar detalle de la sala
+    if (¿Mostrar reservas de la sala?) then (sí)
+        -Mostrar reservas de la sala
+    else (no)
+        -Fin
+    endif
+else (cancelar)
+    stop
+endif
+stop
+
+@enduml
+

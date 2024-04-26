@@ -1,0 +1,27 @@
+' Todos los usuarios pueden ver un historial con las salas que han reservado.
+
+@startuml req4
+
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+skinparam shadowing false
+
+start
+:Mostrar historial de reservas;
+if (Usuario selecciona una reserva) then (reserva seleccionada)
+    :Mostrar detalle de la reserva;
+else (cancelar)
+    stop
+endif
+stop
+
+@enduml

@@ -1,0 +1,32 @@
+' Los usuarios podran cancelar sus reservas.
+
+@startuml req10
+
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+start
+repeat
+  :Ver listado de reservas realizadas;
+    if (Selecciona una reserva?) then (no)
+      stop
+    endif
+    ->Si;
+    :Mostrar detalles de la reserva;
+repeat while (Volver al listado de reservas?) is (si) not (no)
+if(Cancelar reserva) then (si)
+    :Elimina la reserva;
+    #red :Alert "Reserva cancelada";
+else (no)
+    :salir;
+endif
+stop
+@enduml

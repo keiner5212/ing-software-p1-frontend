@@ -1,0 +1,29 @@
+' Un usuario con rol administrador puede gestionar las fotos de cualquier sala.
+
+@startuml req6
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+Start 
+if (Administrador) then (Si)
+    :Ver Disponibilidad;
+    if (¿Se desea modificar una foto?) then (Si)
+        :Modificar foto;
+    else if (¿Se requiere eliminar una foto?) then (Si)
+        :Eliminar foto;
+    else (No)
+    endif
+else (No)
+    :Ver fotos de salas;
+endif
+
+End
+@enduml

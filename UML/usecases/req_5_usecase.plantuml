@@ -1,0 +1,36 @@
+' Los usuarios con rol de administrador podran gestionar las salas (CRUD), 
+' en caso de alguna modificacion/eliminacion, se debera 
+' informar por correo a los usuarios con reservas pendientes a esa sala.
+
+@startuml req5
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+
+actor administrador <<Admin>>
+actor docente <<example>>
+
+rectangle "Gestión de Salas" {
+    (Crear sala) as crearSala
+    (Visualizar información de salas) as leerSala
+    (Actualizar sala) as actualizarSala
+    (Eliminar sala) as eliminarSala
+}
+
+usuario -- leerSala
+administrador -- leerSala
+administrador -- crearSala
+administrador -- actualizarSala
+administrador -- eliminarSala
+
+@enduml

@@ -1,0 +1,33 @@
+' Si un usuario se ausenta a una sala que ha reservado, 
+' obtiene una advertencia, si se llega a 3 advertencias para un 
+' usuario se le bloquea el acceso a reservas por si mismo.
+
+@startuml req12
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+actor sistema <<Sistema>>
+actor usuario <<Usuario>>
+
+rectangle "Gestión de Advertencias" {
+    (Registrar ausencia) as registrarAusencia
+    (Verificar advertencias) as verificarAdvertencias
+    (Bloquear acceso a reservas) as bloquearAcceso
+}
+
+usuario -- registrarAusencia
+sistema -- verificarAdvertencias
+sistema -- bloquearAcceso
+
+
+@enduml

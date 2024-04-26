@@ -1,0 +1,32 @@
+' Un usuario con rol administrador puede gestionar los usuarios registrados.
+
+@startuml req7
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+
+actor administrador <<Admin>>
+
+rectangle "Gestión de Usuarios Registrados" {
+    (Crear usuario) as crearUsuario
+    (Ver usuario) as verUsuario
+    (Actualizar usuario) as actualizarUsuario
+    (Eliminar usuario) as eliminarUsuario
+}
+
+administrador -- crearUsuario
+administrador -- verUsuario
+administrador -- actualizarUsuario
+administrador -- eliminarUsuario
+
+@enduml

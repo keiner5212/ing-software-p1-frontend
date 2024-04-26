@@ -14,38 +14,38 @@ A lo largo de este proyecto, nos enfocaremos en diseñar y desarrollar una soluc
 
 ## Requirements
 
--   Todas las acciones de los usuarios sobre las
+1.   Todas las acciones de los usuarios sobre las
     reservas requieren que el usuario haya iniciado
     sesion, para iniciar sesion el usuario debe estar
     registrado.
--   Un usuario con rol administrador puede realizar
+2.   Un usuario con rol administrador puede realizar
     reservas de salas para cualquier docente, un usuario
     con rol docente puede realizar reservas unicamente
     para si mismo.
--   Todos los usuarios podran ver las salas y el detalle
+3.   Todos los usuarios podran ver las salas y el detalle
     de cada una (que incluira las reservas de dicha
     sala).
--   Todos los usuarios pueden ver un historial con las
+4.   Todos los usuarios pueden ver un historial con las
     salas que han reservado.
--   Los usuarios con rol de administrador podran
+5.   Los usuarios con rol de administrador podran
     gestionar las salas (CRUD), en caso de alguna
     modificacion/eliminacion, se debera informar por
     correo a los usuarios con reservas pendientes a esa
     sala.
--   Un usuario con rol administrador puede gestionar las
+6.   Un usuario con rol administrador puede gestionar las
     fotos de cualquier sala.
--   Un usuario con rol administrador puede gestionar los
+7.   Un usuario con rol administrador puede gestionar los
     usuarios registrados.
--   Un usuario con rol administrador puede gestionar las
+8.   Un usuario con rol administrador puede gestionar las
     reservas.
--   Los usuarios podran reservar una sala por un tiempo
+9.   Los usuarios podran reservar una sala por un tiempo
     determinado.
--   Los usuarios podran cancelar sus reservas.
--   Los usuarios podran revisar cuantas advertencias
+10.   Los usuarios podran cancelar sus reservas.
+11.   Los usuarios podran revisar cuantas advertencias
     llevan.
--   Si un usuario se ausenta a una sala que ha
+12.   Si un usuario se ausenta a una sala que ha
     reservado, obtiene una advertencia, si se llega a 3
     advertencias para un usuario se le bloquea el acceso
     a reservas por si mismo.
--   Permitir a los usuarios buscar salas según criterios
+13.   Permitir a los usuarios buscar salas según criterios
     como capacidad, piso y disponibilidad.

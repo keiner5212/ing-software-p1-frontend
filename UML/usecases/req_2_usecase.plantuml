@@ -1,0 +1,29 @@
+' Un usuario con rol administrador puede realizar reservas de salas para cualquier docente, 
+' un usuario con rol docente puede realizar reservas unicamente para si mismo.
+@startuml req2
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+actor profesor<<example>>
+actor administrador << Sr. Carmen>>
+
+left to right direction
+rectangle "Administracion de roles"{
+    (Realizar reserva personal) as realizarPe
+    (Realizar reserva para cualquier persona) as realizarCu
+}
+
+profesor -- realizarPe
+administrador -- realizarCu
+
+
+@enduml

@@ -1,0 +1,32 @@
+' Un usuario con rol administrador puede gestionar las reservas.
+
+@startuml req8
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+actor administrador <<Admin>>
+
+rectangle "Gestión de Reservas" {
+    (Crear reserva) as crearReserva
+    (Ver reserva) as verReserva
+    (Actualizar reserva) as actualizarReserva
+    (Eliminar reserva) as eliminarReserva
+}
+
+administrador -- crearReserva
+administrador -- verReserva
+administrador -- actualizarReserva
+administrador -- eliminarReserva
+
+
+@enduml

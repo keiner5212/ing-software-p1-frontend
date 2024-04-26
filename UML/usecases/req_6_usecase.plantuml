@@ -1,0 +1,29 @@
+' Un usuario con rol administrador puede gestionar las fotos de cualquier sala.
+
+@startuml req6
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+actor administrador <<Admin>>
+
+rectangle "Gestión de Fotos de Salas" {
+    (Subir foto) as subirFoto
+    (Ver fotos) as verFotos
+    (Eliminar foto) as eliminarFoto
+}
+
+administrador -- subirFoto
+administrador -- verFotos
+administrador -- eliminarFoto
+
+@enduml

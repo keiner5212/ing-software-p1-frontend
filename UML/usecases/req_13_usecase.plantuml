@@ -1,0 +1,30 @@
+' Permitir a los usuarios buscar salas según 
+' criterios como capacidad, piso y disponibilidad.
+
+@startuml req13
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+actor usuario <<Usuario>>
+
+rectangle "Búsqueda de Salas" {
+    (Buscar salas por capacidad) as buscarCapacidad
+    (Buscar salas por piso) as buscarPiso
+    (Buscar salas por disponibilidad) as buscarDisponibilidad
+}
+
+usuario -- buscarCapacidad
+usuario -- buscarPiso
+usuario -- buscarDisponibilidad
+
+@enduml

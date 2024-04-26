@@ -1,0 +1,26 @@
+' Los usuarios podran revisar cuantas advertencias llevan.
+
+@startuml req11
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+actor usuario <<Usuario>>
+
+rectangle "Revisión de Advertencias" {
+    (Ver cantidad de advertencias) as verAdvertencias
+}
+
+usuario -- verAdvertencias
+
+
+@enduml

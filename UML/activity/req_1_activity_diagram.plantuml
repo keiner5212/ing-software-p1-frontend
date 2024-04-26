@@ -1,0 +1,38 @@
+'   Todas las acciones de los usuarios sobre las
+'     reservas requieren que el usuario haya iniciado
+'     sesion, para iniciar sesion el usuario debe estar
+'     registrado.
+
+@startuml req1
+
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+(*) --> "Inicio de sesión"
+
+if (¿Está registrado?) then 
+  --> [Sí] "Ver opciones de reserva"
+  --> "Cerrar sesión"
+  --> (*)
+else 
+  --> [No] "Crear cuenta"
+  if (¿Información válida?) then 
+     --> [Sí] "Almacenar en BD"
+     --> "Inicio de sesión"
+     --> (*)
+  else 
+     --> [No] "Error: Información inválida"
+     --> "Crear cuenta"
+     --> (*)
+  endif
+endif
+
+@enduml

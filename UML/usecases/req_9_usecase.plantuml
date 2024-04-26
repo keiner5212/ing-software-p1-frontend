@@ -1,0 +1,26 @@
+' Los usuarios podran reservar una sala por un tiempo determinado.
+
+@startuml req9
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+actor usuario <<example>>
+
+rectangle "Reserva de Sala" {
+    (Reservar sala por un periodo especificado) as reservarSala
+}
+
+usuario -- reservarSala
+
+
+@enduml

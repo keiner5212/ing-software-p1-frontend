@@ -1,0 +1,40 @@
+' Si un usuario se ausenta a una sala que ha reservado, 
+' obtiene una advertencia, si se llega a 3 advertencias para un 
+' usuario se le bloquea el acceso a reservas por si mismo.
+
+@startuml req12
+
+
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+Start 
+
+if (Usuario) then (Si)
+    :¿Se ausenta a una reserva?;
+    if (Si) then (Si)
+        :Obtener advertencia;
+        if (Tiene 3 advertencias?) then (Si)
+            :Bloquear acceso a reservas;
+        else (No)
+            :Continuar;
+        endif
+    else (No)
+        :Continuar;
+    endif
+else (No)
+    :No se aplica este proceso;
+endif
+
+End
+
+
+@enduml

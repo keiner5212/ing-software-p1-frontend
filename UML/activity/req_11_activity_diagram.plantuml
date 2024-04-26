@@ -1,0 +1,28 @@
+' Los usuarios podran revisar cuantas advertencias llevan.
+
+@startuml req11
+
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+
+if (Usuario) then (Si)
+    :¿Desea ver sus advertencias?;
+    if (Si) then (Si)
+        :Revisar cantidad de advertencias;
+    else (No)
+        :Continuar;
+    endif
+else (No)
+endif
+
+
+@enduml

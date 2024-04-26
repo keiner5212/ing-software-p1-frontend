@@ -1,0 +1,26 @@
+' Todos los usuarios pueden ver un historial con las salas que han reservado.
+
+@startuml req4
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+
+
+
+actor profesor <<example>>
+
+rectangle "Ver Historial de Reservas" {
+    (Ver historial de reservas) as verHistorial
+}
+
+profesor -- verHistorial
+
+@enduml

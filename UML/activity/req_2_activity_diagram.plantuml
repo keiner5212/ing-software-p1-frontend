@@ -1,0 +1,27 @@
+' Un usuario con rol administrador puede realizar reservas de salas para cualquier docente, 
+' un usuario con rol docente puede realizar reservas unicamente para si mismo.
+@startuml req2
+skinparam {
+    ArrowColor 010047
+    BorderColor 010047
+    ActivityBackgroundColor dedede
+    ActivityBorderColor 010047
+    ActivityFontColor 010047
+    ActivityFontSize 12
+    ArrowFontColor 010047
+    ArrowFontSize 12
+}
+
+(*) --> "Inicio de sesión"
+
+if (¿Cual es su rol?) then 
+  --> "Profesor"
+  --> "Realizar reserva personal"
+  --> (*)
+else 
+  --> "Administrador"
+  --> "Realizar reserva para cualquier persona"
+  --> (*)
+endif
+
+@enduml

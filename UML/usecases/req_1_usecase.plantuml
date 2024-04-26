@@ -1,0 +1,35 @@
+'    Todas las acciones de los usuarios sobre las
+'     reservas requieren que el usuario haya iniciado
+'     sesion, para iniciar sesion el usuario debe estar
+'     registrado.
+
+@startuml req1
+
+skinparam actor{
+    Style awesome
+    ArrowColor 010047
+    BackgroundColor dedede
+}
+skinparam usecase{
+    BackgroundColor dedede
+    ArrowColor 010047
+    FontColor 000000
+}
+left to right direction
+
+actor usuario <<example>>
+
+rectangle "Administracion"{
+    (Cualquier acción sobre reservas/salas/all) as opcionesRe
+    (Iniciar sesión) as login
+    (Registrarse) as registrase
+}
+
+usuario -- login
+usuario -- opcionesRe
+
+opcionesRe ..> login: include
+
+login ..> registrase: include
+
+@enduml
