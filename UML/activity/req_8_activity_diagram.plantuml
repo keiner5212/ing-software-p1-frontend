@@ -14,11 +14,20 @@ skinparam {
 }
 
 
-if (Administrador) then (Si)
-    :Gestionar reservas;
-else (No)
-    :No tiene permiso para gestionar reservas;
-endif
+start
+ if(Administrador) then (si)
+  :Acceso concedido;
+ else (no)
+  stop
+ endif
+ repeat: Ver lista de reservas
+ if(Sala existente?) then (si)
+  :Modificar o eliminar sala;
+ else (no)
+  :Sala no existente;
+ endif
+ repeat while (Volver al listado de reservas) is (si) not (no) 
+ stop
 
 
 @enduml

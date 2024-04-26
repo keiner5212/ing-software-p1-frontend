@@ -12,13 +12,19 @@ skinparam {
     ArrowFontColor 010047
     ArrowFontSize 12
 }
-
-
-if (Administrador) then (Si)
-    :Gestionar usuarios registrados;
-else (No)
-    :No tiene permiso para gestionar usuarios registrados;
-endif
-
+start
+ if(Administrador) then (si)
+  :Acceso concedido;
+ else (no)
+  stop
+ endif
+ repeat: Ver lista de usuarios
+ if(Usuario existe?) then (si)
+  :Modificar o borrar usuario;
+ else (no)
+  :Usuario no existe;
+ endif
+ repeat while (Volver al listado de usuarios) is (si) not (no) 
+ stop
 
 @enduml
