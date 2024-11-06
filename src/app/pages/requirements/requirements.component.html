@@ -1,236 +1,104 @@
 <app-header></app-header>
-<div class="container papper" id="requirements-container">
-	<h1 class="mb-4">
-		Proyecto de Ingeniería de Software: Sistema de Reserva de Salas
-	</h1>
-
-	<div class="row mb-5">
-		<div class="col">
-			<h2>Backlog del Producto</h2>
-			<p>
-				<strong>Visión General del Proyecto:</strong> Actualmente, el
-				proceso de reserva de salas en el edificio de docentes es
-				manual, utilizando papel y lápiz. Para optimizar este proceso,
-				proponemos desarrollar un sistema de reservas que permita
-				reservar salas de manera más rápida y desde cualquier ubicación.
-				Es fundamental definir claramente los requisitos y
-				funcionalidades para el sistema.
-			</p>
-		</div>
-	</div>
-
-	<div class="row mb-5">
-		<div class="col">
-			<h2>Requisitos del Proyecto:</h2>
-			<ol>
-				<li>
-					<h3>Requisitos del sistema</h3>
-					<ul>
-						<li>
-							Todas las acciones de los usuarios sobre las
-							reservas requieren que el usuario haya iniciado
-							sesion, para iniciar sesion el usuario debe estar
-							registrado.
-						</li>
-						<li>
-							Un usuario con rol administrador puede realizar
-							reservas de salas para cualquier docente, un usuario
-							con rol docente puede realizar reservas unicamente
-							para si mismo.
-						</li>
-						<li>
-							Todos los usuarios podran ver las salas y el detalle
-							de cada una (que incluira las reservas de dicha
-							sala).
-						</li>
-						<li>
-							Todos los usuarios pueden ver un historial con las
-							salas que han reservado.
-						</li>
-						<li>
-							Los usuarios con rol de administrador podran
-							gestionar las salas (CRUD), en caso de alguna
-							modificacion/eliminacion, se debera informar por
-							correo a los usuarios con reservas pendientes a esa
-							sala.
-						</li>
-						<li>
-							Un usuario con rol administrador puede gestionar las
-							fotos de cualquier sala.
-						</li>
-						<li>
-							Un usuario con rol administrador puede gestionar los
-							usuarios registrados.
-						</li>
-						<li>
-							Un usuario con rol administrador puede gestionar las
-							reservas.
-						</li>
-						<li>
-							Los usuarios podran reservar una sala por un tiempo
-							determinado.
-						</li>
-						<li>
-							Los usuarios podran cancelar sus reservas.
-						</li>
-						<li>
-							Los usuarios podran revisar cuantas advertencias
-							llevan.
-						</li>
-						<li>
-							Si un usuario se ausenta a una sala que ha
-							reservado, obtiene una advertencia, si se llega a 3
-							advertencias para un usuario se le bloquea el acceso
-							a reservas por si mismo.
-						</li>
-						<li>
-							Permitir a los usuarios buscar salas según criterios
-							como capacidad, piso y disponibilidad.
-						</li>
-					</ul>
-				</li>
-				<li>
-					<h3>Desarrollo del backend</h3>
-					<ul>
-						<li>Usar como gestor de bases de datos PostgreSQL.</li>
-						<li>
-							La aplicacion estara desarrollada con Express.js.
-						</li>
-						<li>
-							Crear una tabla para almacenar información de
-							usuarios que puedan reservar salas. Debe incluir
-							datos básicos como nombre, apellido, email,
-							contraseña y documento de identidad, que admita
-							varios formatos.
-						</li>
-						<li>
-							Crear una tabla para almacenar detalles de las
-							salas, incluyendo descripción, capacidad y piso.
-							Además, se debe indicar si la sala está ocupada con
-							un campo booleano, inicializado en falso por
-							defecto. La capacidad y el piso deben ser valores
-							mayores que cero.
-						</li>
-						<li>
-							Desarrollar una tabla para gestionar los roles de
-							los usuarios. Al registrarse, con una columna para
-							especificar el rol, estableciendo "Docente" como
-							valor por defecto.
-						</li>
-						<li>
-							Diseñar una tabla para almacenar los estados de cada
-							sala, permitiendo especificar su estado.
-						</li>
-						<li>
-							Crear una tabla para almacenar enlaces a las
-							fotografías de las salas.
-						</li>
-						<li>
-							Crear una tabla para gestionar las reservaciones
-							realizadas por usuarios registradores y registrados,
-							incluyendo la fecha de inicio y fin de cada reserva.
-							Se debe indicar un estado para conocer la
-							disponibilidad de una sala. La fecha de inicio no
-							puede ser posterior a la fecha de fin.
-						</li>
-						<li>
-							Todo debe estar pensado para ser manejado con
-							permisos mediante la tabla de roles.
-						</li>
-						<li>
-							La autenticación debe ser gestionada usando JWT.
-						</li>
-					</ul>
-				</li>
-				<li>
-					<h3>Desarrollo de la Página Web</h3>
-					<ul>
-						<li>
-							Utilizar Node.js como entorno de trabajo y Angular
-							como framework.
-						</li>
-						<li>
-							Emplear TypeScript en el desarrollo.
-						</li>
-						<li>
-							Utilizar Bootstrap para la creación y estilización.
-						</li>
-						<li>
-							La página debe ser accesible desde cualquier
-							navegador web.
-						</li>
-						<li>
-							Ofrecer la posibilidad de cambiar el idioma de la
-							interfaz de usuario para atender a usuarios que
-							prefieren otros idiomas además del predeterminado.
-						</li>
-						<li>
-							Incluir un sistema de autenticación que invluya el
-							registro de usuarios y el inicio de sesión.
-						</li>
-						<li>
-							Incorporar un menú desplegable con secciones para
-							Requerimientos, Equipo SCRUM y SWEBOK.
-						</li>
-						<li>
-							Diseñar una interfaz web intuitiva para docentes de
-							diferentes edades y personal del edificio.
-						</li>
-						<li>
-							Incluir un apartado que presente información sobre
-							los desarrolladores del sitio.
-						</li>
-						<li>
-							Exhibir el ciclo de vida del software en la página.
-						</li>
-						<li>
-							Contar con una sección para visualizar cada área de
-							conocimiento en el SWEBOK.
-						</li>
-						<li>
-							Incorporar una sección para ver los requerimientos
-							del proyecto.
-						</li>
-						<li>
-							Garantizar una interacción fluida entre el usuario y
-							el sistema de reservas.
-						</li>
-					</ul>
-				</li>
-				<li>
-					<h3>Optimización del Proceso de Reserva</h3>
-					<ul>
-						<li>
-							Facilitar la reserva rápida desde cualquier
-							ubicación.
-						</li>
-						<li>
-							Garantizar eficiencia en el proceso de reserva de
-							salas.
-						</li>
-						<li>
-							Implementar notificaciones para confirmación de
-							reservas.
-						</li>
-					</ul>
-				</li>
-				<li>
-					<h3>Seguridad y Privacidad</h3>
-					<ul>
-						<li>
-							Integrar medidas de seguridad para proteger la
-							información de los usuarios (encriptación,
-							autenticación, etc).
-						</li>
-						<li>
-							Implementar autenticación segura para acceder al
-							sistema.
-						</li>
-					</ul>
-				</li>
-			</ol>
-		</div>
-	</div>
-</div>
+<div class="container">
+        <h1>Reserva tu Computador</h1>
+        <div class="computer-grid">
+            <div class="computer-card">
+                <img src="../../../assets/img/laptop.jpg" alt="Computador 1">
+                <h2>Computador 1</h2>
+                <label for="horario1">Selecciona un horario:</label>
+                <select id="horario1">
+                    <option value="6-8am">6-8am</option>
+                    <option value="8-10am">8-10am</option>
+                    <option value="10-12am">10-12am</option>
+                    <option value="12-2pm">12-2pm</option>
+                    <option value="2-4pm">2-4pm</option>
+                    <option value="4-6pm">4-6pm</option>
+                    <option value="6-8pm">6-8pm</option>
+                    <option value="8-10pm">8-10pm</option>
+                </select>
+                <button name="submit" type="button" class="reserve-btn" onclick="window.location.href='/database-tables'">Apartar</button>
+            </div>
+            <div class="computer-card">
+                <img src="../../../assets/img/laptop.jpg" alt="Computador 2">
+                <h2>Computador 2</h2>
+                <label for="horario2">Selecciona un horario:</label>
+                <select id="horario2">
+                    <option value="6-8am">6-8am</option>
+                    <option value="8-10am">8-10am</option>
+                    <option value="10-12am">10-12am</option>
+                    <option value="12-2pm">12-2pm</option>
+                    <option value="2-4pm">2-4pm</option>
+                    <option value="4-6pm">4-6pm</option>
+                    <option value="6-8pm">6-8pm</option>
+                    <option value="8-10pm">8-10pm</option>
+                </select>
+                <button name="submit" type="button" class="reserve-btn" onclick="window.location.href='/database-tables'">Apartar</button>
+            </div>
+            <div class="computer-card">
+                <img src="../../../assets/img/laptop.jpg" alt="Computador 3">
+                <h2>Computador 3</h2>
+                <label for="horario3">Selecciona un horario:</label>
+                <select id="horario3">
+                    <option value="6-8am">6-8am</option>
+                    <option value="8-10am">8-10am</option>
+                    <option value="10-12am">10-12am</option>
+                    <option value="12-2pm">12-2pm</option>
+                    <option value="2-4pm">2-4pm</option>
+                    <option value="4-6pm">4-6pm</option>
+                    <option value="6-8pm">6-8pm</option>
+                    <option value="8-10pm">8-10pm</option>
+                </select>
+                <button name="submit" type="button" class="reserve-btn" onclick="window.location.href='/database-tables'">Apartar</button>
+            </div>
+            <div class="computer-card">
+                <img src="../../../assets/img/laptop.jpg" alt="Computador 4">
+                <h2>Computador 4</h2>
+                <label for="horario4">Selecciona un horario:</label>
+                <select id="horario4">
+                    <option value="6-8am">6-8am</option>
+                    <option value="8-10am">8-10am</option>
+                    <option value="10-12am">10-12am</option>
+                    <option value="12-2pm">12-2pm</option>
+                    <option value="2-4pm">2-4pm</option>
+                    <option value="4-6pm">4-6pm</option>
+                    <option value="6-8pm">6-8pm</option>
+                    <option value="8-10pm">8-10pm</option>
+                </select>
+                <button name="submit" type="button" class="reserve-btn" onclick="window.location.href='/database-tables'">Apartar</button>
+            </div>
+            <div class="computer-card">
+                <img src="../../../assets/img/laptop.jpg" alt="Computador 5">
+                <h2>Computador 5</h2>
+                <label for="horario5">Selecciona un horario:</label>
+                <select id="horario5">
+                    <option value="6-8am">6-8am</option>
+                    <option value="8-10am">8-10am</option>
+                    <option value="10-12am">10-12am</option>
+                    <option value="12-2pm">12-2pm</option>
+                    <option value="2-4pm">2-4pm</option>
+                    <option value="4-6pm">4-6pm</option>
+                    <option value="6-8pm">6-8pm</option>
+                    <option value="8-10pm">8-10pm</option>
+                </select>
+                <button name="submit" type="button" class="reserve-btn" onclick="window.location.href='/database-tables'">Apartar</button>
+            </div>
+            <div class="computer-card">
+                <img src="../../../assets/img/laptop.jpg" alt="Computador 6">
+                <h2>Computador 6</h2>
+                <label for="horario6">Selecciona un horario:</label>
+                <select id="horario6">
+                    <option value="6-8am">6-8am</option>
+                    <option value="8-10am">8-10am</option>
+                    <option value="10-12am">10-12am</option>
+                    <option value="12-2pm">12-2pm</option>
+                    <option value="2-4pm">2-4pm</option>
+                    <option value="4-6pm">4-6pm</option>
+                    <option value="6-8pm">6-8pm</option>
+                    <option value="8-10pm">8-10pm</option>
+                </select>
+                <button name="submit" type="button" class="reserve-btn" onclick="window.location.href='/database-tables'">Apartar</button>
+            </div>
+        </div>
+    </div>
 
 <app-footer></app-footer>

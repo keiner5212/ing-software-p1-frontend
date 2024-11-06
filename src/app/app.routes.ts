@@ -9,12 +9,15 @@ import { CiclosDeVidaComponent } from './pages/ciclos-de-vida/ciclos-de-vida.com
 import { RequirementsComponent } from './pages/requirements/requirements.component';
 import { SwebokComponent } from './pages/swebok/swebok.component';
 import { DatabaseTablesComponent } from './pages/database-tables/database-tables.component';
+import { ComputerReservationComponent } from './pages/computer-rentals/computer-rentals.component';
+
 
 export const routes: Routes = [
     //general routes
     {
         path: 'home', component: HomeComponent
     },
+    { path: 'computer-lend', component: ComputerReservationComponent },
     {
         path: 'about', component: AboutPageComponent
     },
@@ -43,3 +46,6 @@ export const routes: Routes = [
     },
 
 ];
+
+
+

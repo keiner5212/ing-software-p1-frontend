@@ -1,0 +1,17 @@
+.computer-reservation {
+    padding: 20px;
+  }
+  
+  .computer-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  
+  .reservation-message {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+  }
+  

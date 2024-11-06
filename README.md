@@ -49,3 +49,4 @@ A lo largo de este proyecto, nos enfocaremos en diseñar y desarrollar una soluc
     a reservas por si mismo.
 13.   Permitir a los usuarios buscar salas según criterios
     como capacidad, piso y disponibilidad.
+# frontEnd_laptop_loan

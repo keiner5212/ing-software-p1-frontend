@@ -1,0 +1,22 @@
+<p>computer-rentals works!</p>
+<div class="computer-reservation">
+  <h2>Reserva de Computadores</h2>
+  
+  <div *ngFor="let computer of computers" class="computer-item">
+    <h3>{{ computer.name }}</h3>
+    <p>Descripción: {{ computer.description }}</p>
+    
+    <label for="schedule-{{computer.id}}">Seleccione un horario:</label>
+    <select id="schedule-{{computer.id}}" [value]="computer.selectedSchedule" (change)="onScheduleChange($event, computer)">
+      <option *ngFor="let schedule of schedules" [value]="schedule">
+        {{ schedule }}
+      </option>
+    </select>
+    
+    <button (click)="reserveComputer(computer)">Apartar</button>
+  </div>
+
+  <div *ngIf="reservationMessage" class="reservation-message">
+    {{ reservationMessage }}
+  </div>
+</div>
